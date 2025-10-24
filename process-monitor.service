@@ -1,0 +1,14 @@
+[Unit]
+Description=Process Monitor for test service
+After=network.target
+Wants=network.target
+
+[Service]
+Type=oneshot
+User=root
+ExecStart=/usr/local/bin/process_monitor.sh
+StandardOutput=journal
+StandardError=journal
+
+[Install]
+WantedBy=multi-user.target

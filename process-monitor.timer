@@ -1,0 +1,12 @@
+[Unit]
+Description=Run process monitor every minute
+Requires=process-monitor.service
+
+[Timer]
+OnBootSec=1min
+OnCalendar=*:*:00
+AccuracySec=1sec
+Persistent=true
+
+[Install]
+WantedBy=timers.target
